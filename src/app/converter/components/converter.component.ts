@@ -17,7 +17,7 @@ export class ConverterComponent implements OnInit {
   hasError: boolean;
   conversionResponse: ConversionResponse;
 
-  constructor(private currencyService: CurrencyService, converterService: ConverterService) { }
+  constructor(private currencyService: CurrencyService, private converterService: ConverterService) { }
 
   ngOnInit(): void {
     this.currencies = this.currencyService.listAll();
@@ -39,7 +39,11 @@ export class ConverterComponent implements OnInit {
    */
   toConvert(): void{
     if(this.conversionForm.form.valid){
-      alert('Convertendo: ' + JSON.stringify(this.conversion));
+      this.converterService.toConvert(this.conversion)
+        .subscribe(
+          response => this.conversionResponse,
+          error => this.hasError = true
+        );
     }
   }
 

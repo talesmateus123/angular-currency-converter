@@ -22,6 +22,7 @@
 			</option>
 		</select>
 		<input (click)="toConvert()" [disabled]="!conversionForm.form.valid" type="submit" value="Converter" class="btn btn-success">
+		{{ conversionResponse | json }}
 	  </form>
 	 </div>
 </div>
