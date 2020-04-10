@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
-import { ConversionResponse, Conversion, Currency } from '../models';
-import { CurrencyService, ConverterService } from '../services';
+import { ConversionResponse, Conversion, Currency } from '../../models';
+import { CurrencyService, ConverterService } from '../../services';
 
 @Component({
   selector: 'app-converter',

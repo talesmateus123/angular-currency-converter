@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ConverterComponent } from './converter.component';
-import { CurrencyService, ConverterService } from '../services';
+import { CurrencyService, ConverterService } from '../../services';
 
 describe('ConverterComponent', () => {
   let component: ConverterComponent;

@@ -3,14 +3,15 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
-import { ConverterComponent } from './components';
+import { ConverterComponent, ModalQuotationComponent } from './components';
 import { CurrencyService, ConverterService } from './services';
 import { NumberDirective } from './directives';
 
 @NgModule({
   declarations: [
     ConverterComponent,
-    NumberDirective
+    NumberDirective,
+    ModalQuotationComponent
   ],
   imports: [
     CommonModule,
@@ -18,7 +19,8 @@ import { NumberDirective } from './directives';
     FormsModule
   ],
   exports: [
-    ConverterComponent
+    ConverterComponent,
+    ModalQuotationComponent
   ],
   providers: [
     CurrencyService,
