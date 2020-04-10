@@ -1,0 +1,27 @@
+<br />
+<div *ngIf="hasError" class="alert alert-danger" 
+	role="alert">
+	Erro obtendo dados. Tente novamente.
+</div>
+<div class="panel panel-info">
+	<div class="panel-heading">
+		Selecione a moeda a ser convertida
+	</div>
+	<div class="panel-body text-center">
+	  <form  #conversionForm="ngForm" class="form-inline">
+		<input [(ngModel)]="conversion.value" numero type="text" name="valor" class="form-control text-right" placeholder="0"  required>
+		<select [(ngModel)]="conversion.sourceCurrency" name="sourceCurrency" class="form-control" required>
+			<option *ngFor="let currency of currencies" [value]="currency.initials">
+                {{currency.initials}} - {{currency.description}}
+			</option>
+		</select>
+		<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+		<select [(ngModel)]="conversion.targetCurrency" name="targetCurrency" class="form-control" required>
+			<option *ngFor="let currency of currencies" [value]="currency.initials">
+                {{currency.initials}} - {{currency.description}}
+			</option>
+		</select>
+		<input (click)="toConvert()" [disabled]="!conversionForm.form.valid" type="submit" value="Converter" class="btn btn-success">
+	  </form>
+	 </div>
+</div>
